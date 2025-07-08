@@ -128,3 +128,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+# Logging setup to capture errors in production
+import os
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
