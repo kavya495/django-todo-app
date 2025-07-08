@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ic6b$%$c&ddjxzlk+@o&-^33u(0^ixvyyz&ri&@vige$b_b#2u'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -125,4 +125,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
